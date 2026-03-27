@@ -6,14 +6,16 @@ class App:
         self.running = True;
         self._display_surf = None;
         self.size = self.weight, self.height = 640, 400;
-    
+
     def on_init(self):
         pygame.init();
         self.display_surf = pygame.display.set_mode(self.size, pygame.HWSURFACE);
         self._running = True;
+    
     def on_event(self, event):
         if event.type == pygame.QUIT:
             self._running = False;
+    
     def on_loop(self):
         pass;
     def on_render(self):
@@ -30,6 +32,7 @@ class App:
             self.on_loop();
             self.on_render();
         self.on_cleanup();
+
 if __name__ == "__main__":
     theApp = App(); 
     theApp.on_execute();
